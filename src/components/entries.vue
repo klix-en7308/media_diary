@@ -18,6 +18,10 @@ import Single from './single.vue';
     )
 
     const emit = defineEmits(['update-entries', 'view-entry'])
+
+    const sorteddates = computed(()=>{
+        dates.sort((a,b)=> new Date(b).getTime() - new Date(a).getTime());
+    })
     
     const deleteEntryApp = (id)=>{
         console.log(id);

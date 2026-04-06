@@ -188,7 +188,7 @@ onMounted(() => {
           </div>
         </div>
       </div>
-      <button class="add" @click="contentstate = 'form'">
+      <button class="add" @click="contentstate = 'form'" :disabled="contentstate == 'form'">
         + add an entry
       </button>
       <div class="right">

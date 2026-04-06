@@ -1,6 +1,6 @@
 # Kalixen's Media Diary (beta??)
 
-
+#### [visit the deployed app here!](https://mediadiaryism.chicken-nugget7308.workers.dev)
 
 personal media diary thing bcs,, idk i dont liek putting my opinions on things publicly
 doesn't really feel like an actual media diary, more like just a diary diary but ig this is somewhat of an experimental beginner-ish project so erm step by step people okau

@@ -139,7 +139,7 @@ onMounted(() => {
   <main class="app">
     <div class="grid">
       <div class="top">
-        kalixen's media diary
+        media diary
       </div>
       <div class="left">
         <div class="rightcontent">

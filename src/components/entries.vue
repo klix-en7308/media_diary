@@ -44,6 +44,9 @@ import Single from './single.vue';
             <Single @delete-entry="deleteEntryApp" @view-entry="viewEntryApp" v-if="entry.date.toISOString().slice(0, 10) == dates" :title="entry.title" :category="entry.category" :id="entry.id" :date="entry.date" :rating="entry.rating" :content="entry.content"></Single>
         </div>
     </div>
+    <div class="flavor" v-if="sorteddates.length == 0">
+        nothing's here... add something!
+    </div>
     </div>
 </template>
 <style lang="css" scoped>
@@ -59,5 +62,11 @@ import Single from './single.vue';
     width: fit-content;
     margin-top: 20px;
     color: white;
+}
+.flavor{
+    text-align: center;
+    padding: 20px;
+    font-size: 13px;
+    color: #506a8d
 }
 </style>

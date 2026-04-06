@@ -117,6 +117,42 @@ let filteredDates = computed(() => {
   })
 })
 
+// how to download aaa
+
+const downloadData = () => {
+  const blob = new Blob([JSON.stringify(entries.value)], {type: 'application/json'});
+  const url = window.URL.createObjectURL(blob);
+  const link = document.createElement('a');
+  link.href = url;
+  link.download = 'data.json';
+  link.click();
+  window.URL.revokeObjectURL(url);
+}
+
+const uploadData = (ev) => {
+  const file = ev.target.files[0];
+  if (!file) return;
+  const reader = new FileReader();
+  reader.onload = (e) => {
+    try {
+      const saved = JSON.parse(e.target.result)
+
+      entries.value = saved.map(entry => ({
+        ...entry,
+        date: new Date(entry.date) 
+      }))
+    } catch (error) {
+      console.error('Invalid JSON file', error);
+    }
+  };
+  reader.readAsText(file);
+}
+
+const triggerInput = ()=>{
+  document.getElementById("fileupload").click();
+}
+
+
 watch(entries, newVal=>{
   localStorage.setItem('entries', JSON.stringify(newVal))
 }, {deep: true})
@@ -133,6 +169,7 @@ onMounted(() => {
   }))
   console.log(entries.value)
 })
+
 </script>
 
 <template>
@@ -197,6 +234,11 @@ onMounted(() => {
         <button class="add" @click="contentstate = 'form'">
         + add an entry
         </button>
+        <div class="select-row">
+          <div><button class="add" @click="downloadData">save</button></div>
+          <div><button class="add" @click="triggerInput">upload</button></div>
+        </div>
+        <div><input class="add" @change="uploadData" type="file" accept=".json" id="fileupload"></input></div>
         </div>
       </div>
       
@@ -222,5 +264,8 @@ onMounted(() => {
 <style scoped>
 .radios{
   color: white
+}
+input[type="file"]{
+  display: none;
 }
 </style>

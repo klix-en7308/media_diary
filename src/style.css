@@ -15,7 +15,7 @@ main::before {
   content: "";
   position: absolute;
   top: 0; left: 0; right: 0; bottom: 0;
-  background-image: url('https://i.pinimg.com/736x/9a/99/8e/9a998e55b0c30fd5e9a1a1e4187f5a6a.jpg');
+  background-image: url('https://i.pinimg.com/736x/29/60/b1/2960b11fdc04b8747785a69309e2c575.jpg');
   background-size: cover;
   filter: blur(8px); /* Adjust blur intensity here */
   z-index: -1;
@@ -30,38 +30,38 @@ main::before {
   grid-template-areas: 
   'header header'
   'nav content'
-  'addbtn content'
+  'nav content'
   ;
+  border: 2px solid #2780F5
 }
 .top{
   grid-area: header;
-  background-color: rgb(105, 48, 48);
+  background-color: #2780F5;
   font-family: 'Courier New', Courier, monospace;
-  color: black;
+  color: white;
   padding: 20px;
   font-size: 30px;
-  border-bottom: 1px solid rgb(105, 48, 48);
+  border-bottom: 1px solid #2780F5;
 }
 .left{
   grid-area: nav;
-  background-color: black;
-  border-right: 1px solid rgb(105, 48, 48);
+  background-color: white;
+  border-right: 1px solid #2780F5;
 }
 .right{
   grid-area: content;
-  background-color: black;
+  background-color: white;
   overflow-y: auto;
-  color: white;
+  color: black;
 }
 .add{
-  grid-area: addbtn;
-  background-color: rgb(105, 48, 48);
+  background-color: #2780F5;
   font-family: 'Courier New', Courier, monospace;
-  color: black;
+  color: white;
   align-items: center;
   cursor: pointer;
 
 }
 .add:hover{
-  background-color: rgb(75, 33, 33);
+  background-color: #184e96;
 }

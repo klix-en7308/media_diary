@@ -187,10 +187,11 @@ onMounted(() => {
             <label for="tv-show">Tv Shows</label>
           </div>
         </div>
-      </div>
-      <button class="add" @click="contentstate = 'form'">
+        <button class="add" @click="contentstate = 'form'">
         + add an entry
-      </button>
+        </button>
+      </div>
+      
       <div class="right">
         <component :is="currentcomp" 
           @update-entries="updateEntries" 

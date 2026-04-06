@@ -142,21 +142,28 @@ onMounted(() => {
         kalixen's media diary
       </div>
       <div class="left">
-        <div>
-          <select v-model="pickedMonth">
-          <option selected="">all</option>
-          <option v-for="month in months">
-            {{ month }}
-          </option>
-        </select>
-        <select v-model="pickedYear">
-          <option selected>all</option>
-          <option v-for="year in years">
-            {{ year }}
-          </option>
-        </select>
+        <div class="rightcontent">
+        <div class="select-row">
+          <div>
+            Month
+            <select v-model="pickedMonth">
+            <option selected="">all</option>
+            <option v-for="month in months">
+              {{ month }}
+            </option>
+            </select>
+          </div>
+          <div>
+            Year<select v-model="pickedYear">
+            <option selected>all</option>
+            <option v-for="year in years">
+              {{ year }}
+            </option>
+            </select>
+          </div>
+          
         </div>
-        <div>
+        <div class="categoryarea">
           Category: 
           <div class="radios">
             <input type="radio" v-model="pickedCategory" name="radioo" id="all" value="all" checked />
@@ -190,6 +197,7 @@ onMounted(() => {
         <button class="add" @click="contentstate = 'form'">
         + add an entry
         </button>
+        </div>
       </div>
       
       <div class="right">
@@ -202,6 +210,10 @@ onMounted(() => {
           :dates="filteredDates" 
           :entryviewing="viewedentry"
         ></component>
+      </div>
+
+      <div class="footer">
+        made by kalixen - 04.2026
       </div>
     </div>
   </main>

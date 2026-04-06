@@ -10,6 +10,7 @@ main{
   align-items: center;
   justify-content: center;
   overflow: hidden;
+  font-family: 'Courier New', Courier, monospace;
 }
 main::before {
   content: "";
@@ -30,23 +31,23 @@ main::before {
   grid-template-areas: 
   'header header'
   'nav content'
-  'nav content'
+  'footer footer'
   ;
-  border: 2px solid #2780F5
+  border: 2px solid #8BABD6
 }
 .top{
   grid-area: header;
-  background-color: #2780F5;
+  background-color: #8BABD6;
   font-family: 'Courier New', Courier, monospace;
   color: white;
   padding: 20px;
   font-size: 30px;
-  border-bottom: 1px solid #2780F5;
+  border-bottom: 1px solid #8BABD6;
 }
 .left{
   grid-area: nav;
   background-color: white;
-  border-right: 1px solid #2780F5;
+  padding: 20px;
 }
 .right{
   grid-area: content;
@@ -54,14 +55,77 @@ main::before {
   overflow-y: auto;
   color: black;
 }
+.rightcontent{
+  padding: 10px;
+  border: 2px solid #8BABD6;
+  font-size: 13px;
+}
 .add{
-  background-color: #2780F5;
+  background-color: #8BABD6;
   font-family: 'Courier New', Courier, monospace;
   color: white;
   align-items: center;
   cursor: pointer;
+  width: 100%;
+  margin-top: 10px;
 
 }
 .add:hover{
   background-color: #184e96;
+}
+.footer{
+  background-color: #8BABD6;
+  grid-area: footer;
+  color: white;
+  display: flex;
+  align-items: center;
+  padding-right: 20px;
+  font-size: 10px;
+  justify-content: end;
+}
+.select-row{
+  display: flex;
+  flex-direction: row;
+  column-gap: 10px;
+}
+.select-row div{
+  width: 50%
+}
+select{
+  width: 100%;
+  outline-color: #8BABD6;
+  margin-top: 5px;
+  border-radius: 0;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 10px;
+}
+select::selection{
+  background-color: #8BABD6;
+}
+select option{
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 10px;
+}
+select option::selection{
+  appearance: none;
+  background-color: #8BABD6;
+}
+label{
+  color: #506a8d;
+  font-size: 12px;
+}
+
+.categoryarea{
+  margin-top: 10px;
+}
+
+.categoryarea input{
+  margin-left: 0px;
+  appearance: none;
+  width: 10px;
+  height: 10px;
+  border: 1px solid #506a8d;
+}
+.categoryarea input:checked{
+  background-color: #506a8d;
 }

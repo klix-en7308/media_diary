@@ -36,7 +36,7 @@ const addEntry = ()=>{
                 <input type="date" v-model="inputs.date">
             </div>
             <div class="row">
-                <div class="left">
+                <div class="yes">
                     
                     <label for="date">category </label>
                     <br>
@@ -50,7 +50,7 @@ const addEntry = ()=>{
                         <option>tv-show</option>
                     </select>
                 </div>
-                <div class="left">
+                <div class="yes">
                     <label for="rating">rating </label>
                     <input type="number" min="1" max="5" v-model="inputs.rating">
                 </div>
@@ -86,31 +86,33 @@ form{
 .row input{
     width: 100%;
 }
-.left{
+.yes{
     width: 50%;
 }
 input{
-    background-color: black;
-    border-bottom: 1px solid rgb(105, 48, 48);
+    background-color: white;
+    border-bottom: 1px solid #8BABD6;
     border-left: none;
     border-right: none;
     border-top: none;
-    color: rgb(105, 48, 48)
+    color: #8BABD6;
+    font-size: 11px;
+    font-family: 'Courier New', Courier, monospace;
 }
 input:focus{
-    background-color: black;
-    border-bottom: 1px solid rgb(105, 48, 48);
+    background-color: white;
+    border-bottom: 1px solid #8BABD6;
     border-left: none;
     border-right: none;
     border-top: none;
-    color: rgb(105, 48, 48);
+    color: #8BABD6;
     outline: none;
 }
 textarea{
     width: 100%;
-    height: 200px;
-    background-color: black;
-    border: 1px solid rgb(105, 48, 48);
+    height: 260px;
+    background-color: white;
+    border: 1px solid #8BABD6;
     color: gray;
     margin-top: 10px;
     padding: 10px;
@@ -119,10 +121,15 @@ textarea{
 }
 textarea:focus{
     outline: none;
+
 }
 input[type="submit"]{
-    background-color: rgb(105, 48, 48);
-    color: black;
+    background-color: #8BABD6;
+    color: white;
     cursor: pointer;
+    padding: 5px
+}
+input[type="submit"]:hover{
+    background-color: #184e96;
 }
 </style>

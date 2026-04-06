@@ -55,6 +55,7 @@ const addEntry = ()=>{
                     <input type="number" min="1" max="5" v-model="inputs.rating">
                 </div>
             </div>
+            <br>
             <label for="note" style="margin-top: 10px;">notes </label>
             <br>
             <textarea v-model="inputs.content">
@@ -68,6 +69,9 @@ const addEntry = ()=>{
 <style lang="css" scoped>
 template{
     color: white;
+}
+label{
+    font-family: monospace;
 }
 form{
     padding: 20px;
@@ -95,7 +99,7 @@ input{
     border-left: none;
     border-right: none;
     border-top: none;
-    color: #8BABD6;
+    color: #506a8d;
     font-size: 11px;
     font-family: 'Courier New', Courier, monospace;
 }
@@ -105,7 +109,7 @@ input:focus{
     border-left: none;
     border-right: none;
     border-top: none;
-    color: #8BABD6;
+    color: #506a8d;
     outline: none;
 }
 textarea{

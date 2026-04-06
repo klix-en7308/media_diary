@@ -38,7 +38,7 @@ main::before {
 .top{
   grid-area: header;
   background-color: #8BABD6;
-  font-family: 'Courier New', Courier, monospace;
+  font-family:  monospace;
   color: white;
   padding: 20px;
   font-size: 30px;
@@ -47,7 +47,7 @@ main::before {
 .left{
   grid-area: nav;
   background-color: white;
-  padding: 20px;
+  padding: 20px 0px 20px 20px;
 }
 .right{
   grid-area: content;
@@ -62,7 +62,7 @@ main::before {
 }
 .add{
   background-color: #8BABD6;
-  font-family: 'Courier New', Courier, monospace;
+  font-family: monospace;
   color: white;
   align-items: center;
   cursor: pointer;
@@ -87,6 +87,7 @@ main::before {
   display: flex;
   flex-direction: row;
   column-gap: 10px;
+  font-family: monospace;
 }
 .select-row div{
   width: 50%
@@ -110,14 +111,16 @@ select option::selection{
   appearance: none;
   background-color: #8BABD6;
 }
-label{
+.categort{
+  font-family: monospace;
+  margin-top: 10px;
+}
+.categoryarea label{
   color: #506a8d;
   font-size: 12px;
 }
 
-.categoryarea{
-  margin-top: 10px;
-}
+
 
 .categoryarea input{
   margin-left: 0px;

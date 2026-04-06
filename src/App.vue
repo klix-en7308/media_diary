@@ -164,7 +164,7 @@ onMounted(() => {
           
         </div>
         <div class="categoryarea">
-          Category: 
+          <div class="categort">Category: </div>
           <div class="radios">
             <input type="radio" v-model="pickedCategory" name="radioo" id="all" value="all" checked />
             <label for="all">all</label>

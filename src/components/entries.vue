@@ -33,24 +33,31 @@ import Single from './single.vue';
     const viewEntryApp = (id)=>{
         emit('view-entry', id)
     }
+
+    const options = { year: 'numeric', month: '2-digit', day: '2-digit' };
 </script>
 <template>
+    <div class="maincontainer">
     <div class="entriess" v-for="dates in sorteddates">
-        <h2>{{ dates }}</h2>
+        <div class="dateting">{{ new Date(dates).toLocaleDateString('en-GB', options) }}</div>
         <div v-for="entry in props.entries">
             <Single @delete-entry="deleteEntryApp" @view-entry="viewEntryApp" v-if="entry.date.toISOString().slice(0, 10) == dates" :title="entry.title" :category="entry.category" :id="entry.id" :date="entry.date" :rating="entry.rating" :content="entry.content"></Single>
         </div>
     </div>
+    </div>
 </template>
 <style lang="css" scoped>
-template{
-    color: white;
+.maincontainer{
+    background-color: white;
+    padding: 0px 20px;
 }
-.entriess{
-    padding: 20px
-}
-h2{
-    font-family: 'Courier New', Courier, monospace;
+.dateting{
+    font-family: monospace;
     font-size: 18px;
+    background-color: #8BABD6;
+    padding: 5px 5px 0px 5px;
+    width: fit-content;
+    margin-top: 20px;
+    color: white;
 }
 </style>

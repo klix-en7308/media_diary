@@ -1,0 +1,66 @@
+body{
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+}
+main{
+  min-height: 100vh;
+  min-width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+main::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-image: url('https://i.pinimg.com/736x/9a/99/8e/9a998e55b0c30fd5e9a1a1e4187f5a6a.jpg');
+  background-size: cover;
+  filter: blur(8px); /* Adjust blur intensity here */
+  z-index: -1;
+  transform: scale(1.1); /* Prevents white "bleeding" at edges */
+}
+.grid{
+  display: grid;
+  width: 700px;
+  grid-template-columns: 30% 70%;
+  grid-template-rows: 80px 470px 30px;
+  grid-template-areas: 
+  'header header'
+  'nav content'
+  'addbtn content'
+  ;
+}
+.top{
+  grid-area: header;
+  background-color: rgb(105, 48, 48);
+  font-family: 'Courier New', Courier, monospace;
+  color: black;
+  padding: 20px;
+  font-size: 30px;
+  border-bottom: 1px solid rgb(105, 48, 48);
+}
+.left{
+  grid-area: nav;
+  background-color: black;
+  border-right: 1px solid rgb(105, 48, 48);
+}
+.right{
+  grid-area: content;
+  background-color: black;
+  overflow-y: auto;
+  color: white;
+}
+.add{
+  grid-area: addbtn;
+  background-color: rgb(105, 48, 48);
+  font-family: 'Courier New', Courier, monospace;
+  color: black;
+  align-items: center;
+  cursor: pointer;
+
+}
+.add:hover{
+  background-color: rgb(75, 33, 33);
+}

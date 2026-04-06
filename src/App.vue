@@ -5,7 +5,7 @@ import { ref, onMounted, computed, watch } from "vue";
 const entries = ref([]);
 
 
-let firstID = 0;
+let firstID = ref(0);
 
 let contentstate = ref('entries');
 let currentcomp = computed(()=>{return contentstate.value == 'entries'? 'entries' : contentstate.value == 'form' ? 'entryform' : 'currentlyviewing'});
@@ -36,10 +36,8 @@ let years = computed(()=>{
 })
 
 const changeVisual = (entrysubmission)=>{
-  console.log(currentcomp.value)
-  firstID += 1;
   entries.value.push({
-    id: firstID,
+    id: crypto.randomUUID(),
     title: entrysubmission.title,
     category: entrysubmission.category,
     date: entrysubmission.date,
@@ -119,7 +117,22 @@ let filteredDates = computed(() => {
   })
 })
 
+watch(entries, newVal=>{
+  localStorage.setItem('entries', JSON.stringify(newVal))
+}, {deep: true})
 
+watch(firstID, newVal=>{
+  localStorage.setItem('firstID', newVal)
+})
+onMounted(() => {
+  const saved = JSON.parse(localStorage.getItem('entries')) || []
+
+  entries.value = saved.map(entry => ({
+    ...entry,
+    date: new Date(entry.date) 
+  }))
+  console.log(entries.value)
+})
 </script>
 
 <template>

@@ -1,5 +1,6 @@
 
 <script setup>
+import { computed } from 'vue';
 import Single from './single.vue';
 
     const props = defineProps(
@@ -20,7 +21,7 @@ import Single from './single.vue';
     const emit = defineEmits(['update-entries', 'view-entry'])
 
     const sorteddates = computed(()=>{
-        dates.sort((a,b)=> new Date(b).getTime() - new Date(a).getTime());
+        return props.dates.sort((a,b)=> new Date(b).getTime() - new Date(a).getTime());
     })
     
     const deleteEntryApp = (id)=>{
@@ -34,7 +35,7 @@ import Single from './single.vue';
     }
 </script>
 <template>
-    <div class="entriess" v-for="dates in props.dates">
+    <div class="entriess" v-for="dates in sorteddates">
         <h2>{{ dates }}</h2>
         <div v-for="entry in props.entries">
             <Single @delete-entry="deleteEntryApp" @view-entry="viewEntryApp" v-if="entry.date.toISOString().slice(0, 10) == dates" :title="entry.title" :category="entry.category" :id="entry.id" :date="entry.date" :rating="entry.rating" :content="entry.content"></Single>
